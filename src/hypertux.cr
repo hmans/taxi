@@ -18,15 +18,9 @@ module Hypertux
   end
 
   # Shortcut macros
-  def self.h1(*args)
-    tag(:h1, *args)
-  end
-
-  def self.div(*args)
-    tag(:div, *args)
-  end
-
-  def self.p(*args)
-    tag(:p, *args)
-  end
+  {% for tag in %w[h1 div p] %}
+    def self.{{ tag.id }}(*args)
+      tag({{ tag }}, *args)
+    end
+  {% end %}
 end
