@@ -1,9 +1,15 @@
 require "./hypertux/*"
 
 module Hypertux
-  def self.tag(name, *children)
+  def self.tag(name, *children, **attrs)
     String::Builder.new.tap do |b|
-      b << "<#{name}>"
+      b << "<#{name}"
+
+      attrs.each do |k, v|
+        b << " #{k}=\"#{v}\""
+      end
+
+      b << ">"
 
       children.each do |child|
         b << child
@@ -19,8 +25,8 @@ module Hypertux
 
   # Shortcut macros
   {% for tag in %w[h1 div p] %}
-    def self.{{ tag.id }}(*args)
-      tag({{ tag }}, *args)
+    def self.{{ tag.id }}(*children, **attrs)
+      tag({{ tag }}, *children, **attrs)
     end
   {% end %}
 end

@@ -1,7 +1,7 @@
 require "./spec_helper"
 
 describe Hypertux do
-  it "renders a tag with some text" do
+  it "renders tags with plain text" do
     str = Hypertux.run do
       h1("Hello world!")
     end
@@ -9,7 +9,7 @@ describe Hypertux do
     str.should eq("<h1>Hello world!</h1>")
   end
 
-  it "renders a tree of tags" do
+  it "renders trees of tags" do
     str = Hypertux.run do
       div(
         p("Hello world!"),
@@ -18,5 +18,13 @@ describe Hypertux do
     end
 
     str.should eq("<div><p>Hello world!</p><p>Here's another paragraph.</p></div>")
+  end
+
+  it "renders tags with attributes" do
+    str = Hypertux.run do
+      h1("Hello world!", class: "large", id: "title")
+    end
+
+    str.should eq("<h1 class=\"large\" id=\"title\">Hello world!</h1>")
   end
 end
