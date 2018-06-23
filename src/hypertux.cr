@@ -1,7 +1,7 @@
 require "./hypertux/*"
 
 module Hypertux
-  def self.tag(name, children : Array(String))
+  def self.tag(name, *children)
     String::Builder.new.tap do |b|
       b << "<#{name}>"
 
@@ -13,24 +13,20 @@ module Hypertux
     end.to_s
   end
 
-  def self.tag(name, children : String)
-    tag(name, [children])
-  end
-
   def self.run
     with self yield
   end
 
   # Shortcut macros
-  macro h1(*args)
-    tag(:h1, {{ *args }})
+  def self.h1(*args)
+    tag(:h1, *args)
   end
 
-  macro div(*args)
-    tag(:div, {{ *args }})
+  def self.div(*args)
+    tag(:div, *args)
   end
 
-  macro p(*args)
-    tag(:p, {{ *args }})
+  def self.p(*args)
+    tag(:p, *args)
   end
 end
