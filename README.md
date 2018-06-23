@@ -1,4 +1,4 @@
-# hypertux
+# taxi
 
 TODO: Write a description here
 
@@ -8,14 +8,14 @@ Add this to your application's `shard.yml`:
 
 ```yaml
 dependencies:
-  hypertux:
-    github: your-github-user/hypertux
+  taxi:
+    github: hmans/taxi
 ```
 
 ## Usage
 
 ```crystal
-require "hypertux"
+require "taxi"
 ```
 
 TODO: Write usage instructions here
@@ -26,7 +26,7 @@ TODO: Write development instructions here
 
 ## Contributing
 
-1. Fork it (<https://github.com/your-github-user/hypertux/fork>)
+1. Fork it (<https://github.com/hmans/taxi/fork>)
 2. Create your feature branch (`git checkout -b my-new-feature`)
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)

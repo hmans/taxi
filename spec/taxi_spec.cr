@@ -1,8 +1,8 @@
 require "./spec_helper"
 
-describe Hypertux do
+describe Taxi do
   it "renders tags with plain text" do
-    str = Hypertux.run do
+    str = Taxi.run do
       h1("Hello world!")
     end
 
@@ -10,7 +10,7 @@ describe Hypertux do
   end
 
   it "renders trees of tags" do
-    str = Hypertux.run do
+    str = Taxi.run do
       div(
         p("Hello world!"),
         p("Here's another paragraph.")
@@ -21,7 +21,7 @@ describe Hypertux do
   end
 
   it "renders tags with attributes" do
-    str = Hypertux.run do
+    str = Taxi.run do
       h1("Hello world!", class: "large", id: "title")
     end
 

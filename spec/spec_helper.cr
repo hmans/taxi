@@ -1,2 +1,2 @@
 require "spec"
-require "../src/hypertux"
+require "../src/taxi"

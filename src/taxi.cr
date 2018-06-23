@@ -1,6 +1,6 @@
-require "./hypertux/*"
+require "./taxi/*"
 
-module Hypertux
+module Taxi
   def self.tag(name, *children, **attrs)
     String::Builder.new.tap do |b|
       b << "<#{name}"
