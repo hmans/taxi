@@ -19,7 +19,7 @@ module Taxi
     end.to_s
   end
 
-  def self.run
+  def self.build
     with self yield
   end
 

@@ -2,7 +2,7 @@ require "./spec_helper"
 
 describe Taxi do
   it "renders tags with plain text" do
-    str = Taxi.run do
+    str = Taxi.build do
       h1("Hello world!")
     end
 
@@ -10,7 +10,7 @@ describe Taxi do
   end
 
   it "renders trees of tags" do
-    str = Taxi.run do
+    str = Taxi.build do
       div(
         p("Hello world!"),
         p("Here's another paragraph.")
@@ -21,7 +21,7 @@ describe Taxi do
   end
 
   it "renders tags with attributes" do
-    str = Taxi.run do
+    str = Taxi.build do
       h1("Hello world!", class: "large", id: "title")
     end
 
